@@ -57,6 +57,18 @@ app.get('/messages/:messageId', async (req, res) => {
     })
   }
 })
+
+app.get('/aboutme', async (req, res) => {
+  // load me from database
+  const me = [{
+    name: "Xiaoteng(Frank) Liu",
+    imageUrl: "https://raw.githubusercontent.com/lapisliu/myPhotos/master/personal/lapis.png",
+    desc: "I'm a computer student at NYU. I love to see how my knowledge and skill could help others. Love to do algorithmic problem and play chess during free time. ",
+    isRobot: false,
+  }]
+   return res.json(me);
+})
+
 // a route to handle logging out users
 app.post('/messages/save', async (req, res) => {
   // try to save the message to the database
